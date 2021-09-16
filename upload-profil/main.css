@@ -1,0 +1,420 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+q {
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 0;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: '';
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+body {
+  font-family: Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: #0f134b;
+  background-color: #e9e5f1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Header */
+
+.codrops-header {
+  padding: 2em 1em 4em;
+  text-align: center;
+}
+
+.codrops-header h1 {
+  margin: 0.5em 0 0;
+  letter-spacing: -1px;
+  font-size: 3em;
+  line-height: 1;
+}
+
+.content {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 0 3em 0;
+}
+
+.content form button {
+  margin-top: 20px;
+  color: #fff;
+  display: inline-block;
+  padding: 4px 20px;
+  font-size: 20px;
+  border-radius: 50px;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+  border: 2px solid transparent;
+  background-color: #5959ff;
+  font-family: poppins;
+}
+
+.content form button:hover {
+  border: 2px solid #5959ff;
+  background-color: transparent;
+  color: #5959ff;
+}
+
+.box {
+  background-color: #cac8df;
+  padding: 6.25rem 1.25rem;
+}
+
+.box+.box {
+  margin-top: 2.5rem;
+}
+
+.js .inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile+label {
+  max-width: 80%;
+  font-size: 1.25rem;
+  /* 20px */
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.625rem 1.25rem;
+  /* 10px 20px */
+}
+
+.no-js .inputfile+label {
+  display: none;
+}
+
+.inputfile:focus+label,
+.inputfile.has-focus+label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile+label svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-top: -0.25em;
+  /* 4px */
+  margin-right: 0.25em;
+  /* 4px */
+}
+
+.inputfile-4+label {
+  color: #5539d3;
+}
+
+.inputfile-4:focus+label,
+.inputfile-4.has-focus+label,
+.inputfile-4+label:hover {
+  color: #252072;
+}
+
+.inputfile-4+label figure {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #5539d3;
+  display: block;
+  padding: 20px;
+  margin: 0 auto 10px;
+}
+
+.inputfile-4:focus+label figure,
+.inputfile-4.has-focus+label figure,
+.inputfile-4+label:hover figure {
+  background-color: #252072;
+}
+
+.inputfile-4+label svg {
+  width: 100%;
+  height: 100%;
+  fill: #f1e5e6;
+}
+
+.inputfile-5+label {
+  color: #d3394c;
+}
+
+.inputfile-5:focus+label,
+.inputfile-5.has-focus+label,
+.inputfile-5+label:hover {
+  color: #722040;
+}
+
+.inputfile-5+label figure {
+  width: 100px;
+  height: 135px;
+  background-color: #d3394c;
+  display: block;
+  position: relative;
+  padding: 30px;
+  margin: 0 auto 10px;
+}
+
+.inputfile-5:focus+label figure,
+.inputfile-5.has-focus+label figure,
+.inputfile-5+label:hover figure {
+  background-color: #722040;
+}
+
+.inputfile-5+label figure::before,
+.inputfile-5+label figure::after {
+  width: 0;
+  height: 0;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.inputfile-5+label figure::before {
+  border-top: 20px solid #dfc8ca;
+  border-left: 20px solid transparent;
+}
+
+.inputfile-5+label figure::after {
+  border-bottom: 20px solid #722040;
+  border-right: 20px solid transparent;
+}
+
+.inputfile-5:focus+label figure::after,
+.inputfile-5.has-focus+label figure::after,
+.inputfile-5+label:hover figure::after {
+  border-bottom-color: #d3394c;
+}
+
+.inputfile-5+label svg {
+  width: 100%;
+  height: 100%;
+  fill: #f1e5e6;
+}

@@ -1,0 +1,1696 @@
+// Start my style
+
+@import '../scss/modules/nav';
+@import '../scss/modules/footer';
+@import '../scss/modules/home';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&family=Viga&display=swap');
+
+// Variabels
+
+$primaryColor: rgb(89, 89, 255);
+$editColor: rgb(255, 142, 89);
+$hapusColor: rgb(255, 89, 89);
+$tampilkanColor: rgb(255, 105, 180);
+$cetakColor: rgb(0, 182, 0);
+$textColor: rgb(51, 51, 51);
+$boxShadowColor: rgba(116, 116, 180, 0.20);
+$buttonShadowColor: rgba(142, 116, 255, 0.15);
+
+// End Variabels
+
+// Mixsins
+
+@mixin tombol {
+	color: #fff !important;
+	padding: 5px 20px !important;
+	border-radius: 50px !important;
+	transition: .2s ease !important;
+	border: 2px solid transparent !important;
+}
+
+@mixin tombol-2 {
+	color: #fff;
+	padding: 2px 15px;
+	border-radius: 50px;
+	transition: .2s ease;
+	border: 2px solid transparent;
+}
+
+@mixin card {
+	padding: 0 50px;
+	border-radius: 20px;
+	-webkit-box-shadow: 0px 0px 60px 0px $boxShadowColor;
+	-moz-box-shadow: 0px 0px 60px 0px $boxShadowColor;
+	box-shadow: 0px 0px 60px 0px $boxShadowColor;
+}
+
+// End Mixins
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+
+	header {
+		margin-bottom: 2.5em;
+
+		h1 {
+			border-bottom: 2px solid $textColor;
+		}
+	}
+
+	.card {
+		@include card();
+
+		.container-items {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+			justify-content: center;
+
+			h2 {
+				text-transform: capitalize;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		@media (max-width: 790px) {
+			padding: 50px 70px;
+		}
+
+		@media (max-width: 600px) {
+			padding: 50px 30px;
+		}
+	}
+
+	.card-kebawah {
+		@include card();
+		padding-bottom: 50px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		justify-content: center;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.search {
+		border: none;
+		outline: none;
+		width: 200px;
+		font-size: 16px;
+
+		&::placeholder {
+			font-size: 16px;
+		}
+	}
+
+	.w110 {
+		width: 49%;
+
+		@media (max-width: 790px) {
+			width: 100%;
+		}
+	}
+
+	.kanan {
+		margin-left: auto;
+	}
+
+	.tabel-data-admin {
+		margin-top: 2em;
+
+		.ini-search {
+			float: left;
+			border-bottom: 1px solid $textColor;
+			padding: 0;
+
+			button {
+				background: transparent;
+				border: none;
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+
+			i {
+				font-size: 14px;
+				margin-right: 10px;
+			}
+
+			.search {
+				border: none;
+				outline: none;
+				width: 200px;
+				padding-left: 0;
+				font-size: 16px;
+
+				&::placeholder {
+					font-size: 16px;
+				}
+			}
+		}
+
+		.tombol-apalagi {
+			@include tombol-2();
+			background-color: $primaryColor;
+			font-size: 16px;
+			cursor: pointer;
+			float: right;
+
+			&:hover {
+				background-color: lighten($primaryColor, 6);
+			}
+		}
+
+		.tombol-juga {
+			@include tombol();
+			background-color: $editColor !important;
+			float: right;
+
+			&:hover {
+				background-color: transparent !important;
+				border: 2px solid $editColor !important;
+				color: $editColor !important;
+			}
+		}
+
+		.tombol {
+			@include tombol();
+			background-color: $primaryColor !important;
+			float: right;
+			margin-right: 10px;
+
+			&:hover {
+				background-color: transparent !important;
+				border: 2px solid $primaryColor !important;
+				color: $primaryColor !important;
+			}
+		}
+
+		.tahun-bulan {
+			margin-top: 10px;
+			margin-bottom: -10px;
+
+			select {
+				outline: none;
+				border: none;
+				border: 1px solid $textColor;
+				border-radius: 20px;
+				padding: 1px 0 1px 10px;
+
+				&,
+				.tahun-bulan select option {
+					font-size: 16px;
+				}
+			}
+
+			span {
+				.tombol-tampilkan {
+					@include tombol-2();
+					background-color: $tampilkanColor;
+					display: inline-block;
+					// padding: 8px;
+					font-size: 16px;
+
+					&:hover {
+						background-color: lighten($tampilkanColor, 5);
+						cursor: pointer;
+					}
+				}
+
+				.tombol-inituh {
+					@include tombol-2();
+					background-color: $cetakColor;
+					display: inline-block;
+
+					&:hover {
+						background-color: lighten($cetakColor, 5);
+					}
+				}
+			}
+		}
+
+		.myalert {
+			color: #fff;
+			background-color: $tampilkanColor;
+			border-color: #fbb6ec;
+			position: relative;
+			padding: 1rem 1rem;
+			// margin-bottom: 1rem;
+			border: 1px solid transparent;
+			border-radius: .25rem;
+			margin: 1.2rem auto 0;
+
+			// overflow-x: hidden;
+			span {
+				font-weight: 600;
+			}
+		}
+	}
+
+	.table-container {
+		// padding: 0 10%;
+		padding: 0;
+		margin: 30px auto 0;
+		width: 100%;
+		overflow-x: auto;
+
+		&::-webkit-scrollbar-track {
+			box-shadow: inset 0 0 6px rgba(89, 89, 255, .3);
+			border-radius: 10px;
+			background-color: #F5F5F5;
+		}
+
+		&::-webkit-scrollbar {
+			height: 12px;
+			background-color: #F5F5F5;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			border-radius: 10px;
+			// box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+			background-color: $primaryColor;
+		}
+
+		.table {
+			width: 150%;
+			border-collapse: collapse;
+
+			thead {
+				background-color: $primaryColor;
+
+				tr {
+					th {
+						vertical-align: middle;
+						font-size: 16px;
+						font-weight: 600;
+						letter-spacing: 0.35px;
+						color: #fff;
+						opacity: 1;
+						padding: 12px;
+						vertical-align: top;
+						border: 1px solid #fff;
+					}
+				}
+
+				@media (max-width: 790px) {}
+			}
+
+			tbody {
+
+				// form {
+
+				// }
+
+				tr {
+					td {
+						font-size: 16px;
+						letter-spacing: 0.35px;
+						font-weight: normal;
+						color: $textColor;
+						// background-color: #3c3f44;
+						padding: 8px;
+						text-align: center;
+						border-bottom: 1px solid #dee2e685;
+
+						input {
+							outline: none;
+							border: 1px solid $textColor;
+							border-radius: 5px;
+							padding: 2px;
+						}
+
+						img {
+							width: 130px;
+							padding: 10px;
+							// height: 120px;
+							// border-radius: 100px;
+							border: 2px dashed $textColor;
+						}
+
+						.tombol-2 {
+							@include tombol-2();
+							background-color: $primaryColor;
+							font-size: 16px;
+							cursor: pointer;
+
+							&:hover {
+								background-color: lighten($primaryColor, 6);
+							}
+						}
+
+						.tombol-kehadiran {
+							@include tombol();
+							background-color: $primaryColor;
+							font-size: 16px;
+							cursor: pointer;
+
+							&:hover {
+								background-color: lighten($primaryColor, 6);
+							}
+						}
+
+						.button-ilang {
+							background: transparent;
+							border: none;
+							position: relative;
+							color: #fff;
+						}
+
+						.tombol-edit {
+							background-color: $editColor;
+							@include tombol-2();
+							font-size: 16px;
+							cursor: pointer;
+
+							&:hover {
+								background-color: lighten($editColor, 6);
+							}
+						}
+
+						form {
+							display: inline-block;
+						}
+
+						button.tombol-baru {
+							@include tombol-2();
+							background-color: $hapusColor;
+							font-size: 16px;
+							cursor: pointer;
+							// margin-top: 8px;
+
+							&:hover {
+								background-color: lighten($hapusColor, 6);
+							}
+						}
+
+						.tombol-hapus {
+							background-color: $hapusColor;
+							@include tombol-2();
+
+							&:hover {
+								background-color: lighten($hapusColor, 6);
+							}
+
+							@media (max-width: 1028px) {
+								display: inline-block;
+								margin-top: 8px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.table-2 {
+			width: 220%;
+			border-collapse: collapse;
+
+			thead {
+				background-color: $primaryColor;
+
+				tr {
+					th {
+						vertical-align: middle;
+						font-size: 16px;
+						font-weight: 600;
+						letter-spacing: 0.35px;
+						color: #fff;
+						opacity: 1;
+						padding: 12px;
+						vertical-align: top;
+						border: 1px solid #fff;
+					}
+				}
+
+				@media (max-width: 790px) {}
+			}
+
+			tbody {
+
+				// form {
+
+				// }
+
+				tr {
+					td {
+						font-size: 16px;
+						letter-spacing: 0.35px;
+						font-weight: normal;
+						color: $textColor;
+						// background-color: #3c3f44;
+						padding: 8px;
+						text-align: center;
+						border-bottom: 1px solid #dee2e685;
+
+						input {
+							outline: none;
+							border: 1px solid $textColor;
+							border-radius: 5px;
+							padding: 2px;
+						}
+
+						img {
+							width: 130px;
+							padding: 10px;
+							// height: 120px;
+							// border-radius: 100px;
+							border: 2px dashed $textColor;
+						}
+
+						.tombol-2 {
+							@include tombol-2();
+							background-color: $primaryColor;
+							font-size: 16px;
+							cursor: pointer;
+
+							&:hover {
+								background-color: lighten($primaryColor, 6);
+							}
+						}
+
+						.button-ilang {
+							background: transparent;
+							border: none;
+							position: relative;
+							color: #fff;
+						}
+
+						.tombol-inituh {
+							@include tombol-2();
+							background-color: $cetakColor;
+							display: inline-block;
+
+							&:hover {
+								background-color: lighten($cetakColor, 5);
+							}
+						}
+
+						.tombol-edit {
+							background-color: $editColor;
+							@include tombol-2();
+							font-size: 16px;
+							cursor: pointer;
+
+							&:hover {
+								background-color: lighten($editColor, 6);
+							}
+						}
+
+						form {
+							display: inline-block;
+						}
+
+						.tombol-baru {
+							@include tombol-2();
+							background-color: $hapusColor;
+							font-size: 16px;
+							cursor: pointer;
+							// margin-top: 8px;
+
+							&:hover {
+								background-color: lighten($hapusColor, 6);
+							}
+						}
+
+						.tombol-hapus {
+							background-color: $hapusColor;
+							@include tombol-2();
+
+							&:hover {
+								background-color: lighten($hapusColor, 6);
+							}
+
+							@media (max-width: 1028px) {
+								display: inline-block;
+								margin-top: 8px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.table-3 {
+			width: 100%;
+			border-collapse: collapse;
+
+			thead {
+				background-color: $primaryColor;
+
+				tr {
+					th {
+						vertical-align: middle;
+						font-size: 16px;
+						font-weight: 600;
+						letter-spacing: 0.35px;
+						color: #fff;
+						opacity: 1;
+						padding: 12px;
+						vertical-align: top;
+						border: 1px solid #fff;
+					}
+				}
+
+				@media (max-width: 790px) {}
+			}
+
+			tbody {
+
+				// form {
+
+				// }
+
+				tr {
+					td {
+						font-size: 16px;
+						letter-spacing: 0.35px;
+						font-weight: normal;
+						color: $textColor;
+						// background-color: #3c3f44;
+						padding: 8px;
+						text-align: center;
+						border-bottom: 1px solid #dee2e685;
+
+						input {
+							outline: none;
+							border: 1px solid $textColor;
+							border-radius: 5px;
+							padding: 2px;
+						}
+
+						img {
+							width: 130px;
+							padding: 10px;
+							// height: 120px;
+							// border-radius: 100px;
+							border: 2px dashed $textColor;
+						}
+
+						.tombol-2 {
+							@include tombol-2();
+							background-color: $primaryColor;
+							font-size: 16px;
+							cursor: pointer;
+
+							&:hover {
+								background-color: lighten($primaryColor, 6);
+							}
+						}
+
+						.button-ilang {
+							background: transparent;
+							border: none;
+							position: absolute;
+							z-index: -9;
+							color: #fff;
+						}
+
+						.tombol-inituh {
+							@include tombol-2();
+							background-color: $cetakColor;
+							display: inline-block;
+
+							&:hover {
+								background-color: lighten($cetakColor, 5);
+							}
+						}
+
+						.tombol-edit {
+							background-color: $editColor;
+							@include tombol-2();
+							font-size: 16px;
+							cursor: pointer;
+
+							&:hover {
+								background-color: lighten($editColor, 6);
+							}
+						}
+
+						form {
+							display: inline-block;
+						}
+
+						.tombol-baru {
+							@include tombol-2();
+							background-color: $hapusColor;
+							font-size: 16px;
+							cursor: pointer;
+							// margin-top: 8px;
+
+							&:hover {
+								background-color: lighten($hapusColor, 6);
+							}
+						}
+
+						.tombol-hapus {
+							background-color: $hapusColor;
+							@include tombol-2();
+
+							&:hover {
+								background-color: lighten($hapusColor, 6);
+							}
+
+							@media (max-width: 1028px) {
+								display: inline-block;
+								margin-top: 8px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.table-4 {
+			width: 140%;
+			border-collapse: collapse;
+
+			thead {
+				background-color: $primaryColor;
+
+				tr {
+					th {
+						vertical-align: middle;
+						font-size: 16px;
+						font-weight: 600;
+						letter-spacing: 0.35px;
+						color: #fff;
+						opacity: 1;
+						padding: 12px;
+						vertical-align: top;
+						border: 1px solid #fff;
+					}
+				}
+
+				@media (max-width: 790px) {}
+			}
+
+			tbody {
+
+				// form {
+
+				// }
+
+				tr {
+					td {
+						font-size: 16px;
+						letter-spacing: 0.35px;
+						font-weight: normal;
+						color: $textColor;
+						// background-color: #3c3f44;
+						padding: 8px;
+						text-align: center;
+						border-bottom: 1px solid #dee2e685;
+
+						input {
+							outline: none;
+							border: 1px solid $textColor;
+							border-radius: 5px;
+							padding: 2px;
+						}
+
+						img {
+							width: 130px;
+							padding: 10px;
+							// height: 120px;
+							// border-radius: 100px;
+							border: 2px dashed $textColor;
+						}
+
+						.tombol-2 {
+							@include tombol-2();
+							background-color: $primaryColor;
+							font-size: 16px;
+							cursor: pointer;
+
+							&:hover {
+								background-color: lighten($primaryColor, 6);
+							}
+						}
+
+						.button-ilang {
+							background: transparent;
+							border: none;
+							position: absolute;
+							z-index: -9;
+							color: #fff;
+						}
+
+						.tombol-inituh {
+							@include tombol-2();
+							background-color: $cetakColor;
+							display: inline-block;
+
+							&:hover {
+								background-color: lighten($cetakColor, 5);
+							}
+						}
+
+						.tombol-edit {
+							background-color: $editColor;
+							@include tombol-2();
+							font-size: 16px;
+							cursor: pointer;
+
+							&:hover {
+								background-color: lighten($editColor, 6);
+							}
+						}
+
+						form {
+							display: inline-block;
+						}
+
+						.tombol-baru {
+							@include tombol-2();
+							background-color: $hapusColor;
+							font-size: 16px;
+							cursor: pointer;
+							// margin-top: 8px;
+
+							&:hover {
+								background-color: lighten($hapusColor, 6);
+							}
+						}
+
+						.tombol-hapus {
+							background-color: $hapusColor;
+							@include tombol-2();
+
+							&:hover {
+								background-color: lighten($hapusColor, 6);
+							}
+
+							@media (max-width: 1028px) {
+								display: inline-block;
+								margin-top: 8px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.baris-cetak {
+		margin: 30px 0;
+
+		.tombol-inituh {
+			@include tombol-2();
+			background-color: $cetakColor;
+			display: inline-block;
+
+			&:hover {
+				background-color: lighten($cetakColor, 5);
+			}
+		}
+	}
+
+	.detail {
+		margin-top: 30px;
+		padding: 40px 50px;
+
+		.user-foto {
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+			justify-content: center;
+			height: 100%;
+
+			img {
+				width: 100%;
+				border: 2px dashed $textColor;
+				padding: 10px;
+			}
+		}
+
+		.deskripsi {
+			height: 80%;
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+			height: 100%;
+			justify-content: center;
+			border-right: 2px solid #efefef;
+
+			h2 {
+				text-transform: capitalize;
+			}
+
+			p {
+				font-size: 18px;
+			}
+
+			.detail-button {
+				margin: 20px 0;
+
+				.tombol-edit {
+					background-color: $editColor;
+					@include tombol-2();
+					font-size: 16px;
+					cursor: pointer;
+
+					&:hover {
+						background-color: lighten($editColor, 6);
+					}
+				}
+
+				.tombol-hapus {
+					background-color: $hapusColor;
+					@include tombol-2();
+					font-size: 16px;
+					cursor: pointer;
+
+					&:hover {
+						background-color: lighten($hapusColor, 6);
+					}
+				}
+
+				.tombol-logout {
+					@include tombol-2();
+					font-size: 16px;
+					cursor: pointer;
+					font-weight: 600;
+					background-color: $textColor;
+					border: 2px solid $textColor;
+
+					&:hover {
+						background-color: transparent;
+						color: $textColor;
+					}
+				}
+			}
+		}
+
+		.informasi {
+			display: inline-block;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+			justify-content: center;
+			height: 100%;
+
+			.data-informasi {
+				display: block;
+				width: 100%;
+
+				p {
+					margin: 6px 0;
+					font-size: 16px;
+				}
+
+				p.field {
+					width: 30%;
+					font-weight: 600;
+					// background-color: yellow;
+				}
+
+				p.text-gray {
+					width: 70%;
+					// background-color: red;
+				}
+
+				p {
+					float: left;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 790px) {
+		width: 78%;
+	}
+}
+
+.form-kontak {
+	padding: 50px;
+	border-radius: 20px;
+	-webkit-box-shadow: 0px 0px 60px 0px rgba(116, 116, 180, 0.15);
+	-moz-box-shadow: 0px 0px 60px 0px rgba(116, 116, 180, 0.15);
+	box-shadow: 0px 0px 60px 0px rgba(116, 116, 180, 0.15);
+
+	.input-form {
+		display: flex;
+		flex-direction: column-reverse;
+		margin: 1.2em 0;
+	}
+
+	.input-data {
+
+		input,
+		label {
+			transition: 0.4s ease;
+		}
+
+		label {
+			transform: translate(4px, -14px) scale(1.02);
+			margin-bottom: 2px;
+			cursor: text;
+			transform-origin: left top;
+			color: $textColor;
+			position: absolute;
+		}
+
+		input {
+			font-size: 1em;
+			padding: 20px 10px 10px 10px;
+			border: none;
+			border-bottom: 2px solid $textColor;
+			outline: none;
+			border-radius: 5px 5px 0px 0px;
+
+			&::placeholder {
+				opacity: 0;
+			}
+
+			&:focus,
+			&:not(:placeholder-shown) {
+				border-bottom: 2px solid $primaryColor;
+			}
+
+			&:not(:placeholder-shown)~label,
+			&:focus~label {
+				transform: translate(10px, -35px) scale(0.8);
+				padding-left: 0px;
+				color: $primaryColor;
+			}
+		}
+	}
+
+	.textarea-input {
+
+		input:focus~label,
+		textarea:focus~label,
+		input:valid~label,
+		textarea:valid~label {
+			font-size: 0.75em;
+			color: $primaryColor;
+			top: -2.25rem;
+			-webkit-transition: all 0.125s ease;
+			transition: all 0.2s ease;
+		}
+
+		.styled-input {
+			float: left;
+			width: 33.3333%;
+			margin: 1.5rem 0 1rem;
+			position: relative;
+
+			label {
+				color: #999;
+				padding: 1rem 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+				-webkit-transition: all 0.25s ease;
+				transition: all 0.25s ease;
+				pointer-events: none;
+			}
+
+			input,
+			textarea {
+				padding: 1rem 0;
+				border: 0;
+				width: 100%;
+				font-size: 1rem;
+			}
+
+			input~span,
+			textarea~span {
+				display: block;
+				width: 0;
+				height: 3px;
+				background: $primaryColor;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				-webkit-transition: all 0.2s ease;
+				transition: all 0.125s ease;
+			}
+
+			input:focus,
+			textarea:focus {
+				outline: 0;
+			}
+
+			input:focus~span,
+			textarea:focus~span {
+				width: 100%;
+				-webkit-transition: all 0.075s ease;
+				transition: all 0.075s ease;
+			}
+
+			textarea {
+				width: 100%;
+				min-height: 15em;
+			}
+		}
+
+		.wide {
+			width: 100%;
+		}
+	}
+
+	.tombol {
+		@include tombol();
+		background-color: $primaryColor;
+
+		&:hover {
+			background-color: lighten($primaryColor, 6);
+			cursor: pointer;
+		}
+	}
+
+	@media (max-width: 790px) {
+		margin-top: 30px;
+	}
+}
+
+.form-edit {
+	margin-top: 30px !important;
+	padding: 50px !important;
+	border-radius: 20px;
+	-webkit-box-shadow: 0px 0px 60px 0px rgba(116, 116, 180, 0.15);
+	-moz-box-shadow: 0px 0px 60px 0px rgba(116, 116, 180, 0.15);
+	box-shadow: 0px 0px 60px 0px rgba(116, 116, 180, 0.15);
+
+	.input-form {
+		display: flex;
+		flex-direction: column-reverse;
+		margin: 1.2em 0;
+	}
+
+	.foto-edit {
+		width: 210px;
+		margin-bottom: 16px;
+		border: 2px $textColor;
+		border-style: dashed;
+		margin-left: 12px;
+		padding: 8px;
+	}
+
+	.button-wrap {
+		position: relative;
+		margin-bottom: 15px;
+
+		.new-button {
+			display: inline-block;
+			padding: 8px 12px;
+			cursor: pointer;
+			border-radius: 4px;
+			background-color: $editColor;
+			font-size: 16px;
+			color: #fff;
+		}
+
+		input[type="file"] {
+			position: absolute;
+			z-index: -1;
+			top: 6px;
+			left: 2px;
+			font-size: 15px;
+			color: rgb(153, 153, 153);
+		}
+	}
+
+	.input-data {
+
+
+		input,
+		label {
+			transition: 0.4s ease;
+		}
+
+		label {
+			transform: translate(4px, -14px) scale(1.02);
+			margin-bottom: 2px;
+			cursor: text;
+			transform-origin: left top;
+			color: $textColor;
+			position: absolute;
+		}
+
+		input {
+			font-size: 1em;
+			padding: 20px 10px 10px 10px;
+			border: none;
+			border-bottom: 2px solid $textColor;
+			outline: none;
+			border-radius: 5px 5px 0px 0px;
+
+			&::placeholder {
+				opacity: 0;
+			}
+
+			&:focus,
+			&:not(:placeholder-shown) {
+				border-bottom: 2px solid $editColor;
+			}
+
+			&:not(:placeholder-shown)~label,
+			&:focus~label {
+				transform: translate(10px, -35px) scale(0.8);
+				padding-left: 0px;
+				color: $editColor;
+			}
+		}
+
+		.select-form {
+			select {
+				width: 100%;
+				padding: 15px 10px;
+				border-radius: 5px;
+				// margin-bottom: 1.2em;
+				font-size: 16px;
+				border: 2px solid $editColor;
+				color: $textColor;
+				transition: .2s;
+			}
+		}
+
+		.tombol {
+			@include tombol-2();
+			background-color: $editColor;
+			font-size: 16px;
+			padding: 4px 30px;
+
+			i {
+				font-size: 14px;
+				margin: auto 0;
+			}
+
+			&:hover {
+				background-color: lighten($editColor, 6);
+				cursor: pointer;
+			}
+		}
+
+		.tombol-kembali {
+			@include tombol-2();
+			background-color: $primaryColor;
+			font-size: 16px;
+			padding: 4px 30px;
+
+			&:hover {
+				background-color: lighten($primaryColor, 6);
+				cursor: pointer;
+			}
+		}
+
+		p {
+			margin-top: 6px;
+		}
+
+		.link {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		@media (max-width: 790px) {
+			margin-top: 30px;
+		}
+	}
+}
+
+.form-user {
+	margin-top: 30px !important;
+	padding: 50px !important;
+	border-radius: 20px;
+	-webkit-box-shadow: 0px 0px 60px 0px rgba(116, 116, 180, 0.15);
+	-moz-box-shadow: 0px 0px 60px 0px rgba(116, 116, 180, 0.15);
+	box-shadow: 0px 0px 60px 0px rgba(116, 116, 180, 0.15);
+
+	form {
+		// -webkit-box-shadow: 0px 0px 60px 0px $boxShadowColor;
+		// -moz-box-shadow: 0px 0px 60px 0px $boxShadowColor;
+		// box-shadow: 0px 0px 60px 0px $boxShadowColor;
+		// background-color: #fff;
+		// padding: 30px 60px;
+		// border-radius: 22px;
+		// margin-top: 20px;
+
+		.input-form {
+			display: flex;
+			flex-direction: column-reverse;
+			margin: 1.2em 0;
+		}
+
+		input,
+		label {
+			transition: 0.4s ease;
+		}
+
+		label {
+			transform: translate(4px, -14px) scale(1.02);
+			margin-bottom: 2px;
+			cursor: text;
+			transform-origin: left top;
+			color: $textColor;
+			position: absolute;
+		}
+
+		input {
+			font-size: 1em;
+			padding: 20px 10px 10px 10px;
+			border: none;
+			border-bottom: 2px solid $textColor;
+			outline: none;
+			border-radius: 5px 5px 0px 0px;
+
+			&::placeholder {
+				opacity: 0;
+			}
+
+			&:focus,
+			&:not(:placeholder-shown) {
+				border-bottom: 2px solid $primaryColor;
+			}
+
+			&:not(:placeholder-shown)~label,
+			&:focus~label {
+				transform: translate(10px, -35px) scale(0.8);
+				padding-left: 0px;
+				color: $primaryColor;
+			}
+		}
+
+		.select-form {
+
+			select {
+				width: 100%;
+				padding: 15px 10px;
+				border-radius: 5px;
+				margin-bottom: 1.2em;
+				font-size: 16px;
+				border: 2px solid #9e9e9e;
+				color: #757575;
+				transition: .2s;
+			}
+		}
+
+		.tombol {
+			@include tombol-2();
+			background-color: $primaryColor;
+			font-size: 16px;
+			padding: 4px 30px;
+
+			&:hover {
+				background-color: lighten($primaryColor, 6);
+				cursor: pointer;
+			}
+		}
+
+		.tombol-kembali {
+			@include tombol-2();
+			background-color: $primaryColor;
+			font-size: 16px;
+			padding: 4px 30px;
+
+			&:hover {
+				background-color: lighten($primaryColor, 6);
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.form-tambah {
+	margin-top: 30px !important;
+	padding: 50px !important;
+	border-radius: 20px;
+	-webkit-box-shadow: 0px 0px 60px 0px rgba(116, 116, 180, 0.15);
+	-moz-box-shadow: 0px 0px 60px 0px rgba(116, 116, 180, 0.15);
+	box-shadow: 0px 0px 60px 0px rgba(116, 116, 180, 0.15);
+
+	.input-form {
+		display: flex;
+		flex-direction: column-reverse;
+		margin: 1.2em 0;
+	}
+
+	.new-button {
+		display: inline-block;
+		padding: 8px 12px;
+		cursor: pointer;
+		border-radius: 4px;
+		background-color: $primaryColor;
+		font-size: 16px;
+		color: #fff;
+	}
+
+	input[type="file"] {
+		position: absolute;
+		z-index: -1;
+		top: 6px;
+		left: 24px;
+		font-size: 15px;
+		color: rgb(153, 153, 153);
+	}
+
+	.button-wrap {
+		position: relative;
+		margin-bottom: 15px;
+	}
+
+	.input-data {
+
+		input,
+		label {
+			transition: 0.4s ease;
+		}
+
+		label {
+			transform: translate(4px, -14px) scale(1.02);
+			margin-bottom: 2px;
+			cursor: text;
+			transform-origin: left top;
+			color: $textColor;
+			position: absolute;
+		}
+
+		input {
+			font-size: 1em;
+			padding: 20px 10px 10px 10px;
+			border: none;
+			border-bottom: 2px solid $textColor;
+			outline: none;
+			border-radius: 5px 5px 0px 0px;
+
+			&::placeholder {
+				opacity: 0;
+			}
+
+			&:focus,
+			&:not(:placeholder-shown) {
+				border-bottom: 2px solid $primaryColor;
+			}
+
+			&:not(:placeholder-shown)~label,
+			&:focus~label {
+				transform: translate(10px, -35px) scale(0.8);
+				padding-left: 0px;
+				color: $primaryColor;
+			}
+		}
+
+		.select-form {
+			select {
+				width: 100%;
+				padding: 15px 10px;
+				border-radius: 5px;
+				// margin-bottom: 1.2em;
+				font-size: 16px;
+				border: 2px solid #9e9e9e;
+				color: #757575;
+				transition: .2s;
+			}
+		}
+
+		.bawah {
+			margin-bottom: 1.2em;
+		}
+	}
+
+	.tombol {
+		@include tombol-2();
+		background-color: $primaryColor;
+		font-size: 16px;
+		padding: 4px 30px;
+
+		&:hover {
+			background-color: lighten($primaryColor, 6);
+			cursor: pointer;
+		}
+	}
+
+	.tombol-kembali {
+		@include tombol-2();
+		background-color: $primaryColor;
+		font-size: 16px;
+		padding: 4px 30px;
+
+		&:hover {
+			background-color: lighten($primaryColor, 6);
+			cursor: pointer;
+		}
+	}
+
+	@media (max-width: 790px) {
+		margin-top: 30px;
+	}
+}
+
+@media (max-width: 790px) {
+	.container {
+		.card {
+			.container-items {
+				text-align: center;
+				display: inline-block;
+			}
+		}
+
+		.tabel-data-admin {
+
+			.tahun-bulan {
+				margin-bottom: 20px;
+
+				span {
+					display: block;
+					margin-bottom: 5px;
+				}
+			}
+
+			// .tahun-bulan-top {
+			// 	margin-top: 20px !important;
+			// }
+
+			.tombol,
+			.tombol-juga,
+			.tombol-apalagi {
+				float: none;
+				margin: 20px 0;
+				display: inline-block;
+			}
+
+			form {
+				float: none;
+			}
+
+			.table-container {
+				margin: -5px 0;
+
+				.table {
+					thead {
+						display: none;
+					}
+
+					tr {
+						margin-bottom: 15px;
+					}
+
+					tbody {
+						tr {
+							td {
+								text-align: right;
+								padding-left: 50%;
+								position: relative;
+								border: 1px solid #dee2e685;
+								word-wrap: break-word !important;
+								word-break: break-word !important;
+								background-color: #3c3f44;
+								color: #fff;
+
+								.tombol-hapus {
+									margin-top: 0;
+								}
+							}
+						}
+					}
+
+					td:before {
+						content: attr(data-label);
+						position: absolute;
+						left: 0;
+						width: 50%;
+						padding-left: 15px;
+						font-weight: 600;
+						font-size: 16px;
+						text-align: left;
+					}
+				}
+
+				.table,
+				.table tbody,
+				.table tr,
+				.table td {
+					display: block;
+					width: 100%;
+				}
+
+				.table-2 {
+					thead {
+						display: none;
+					}
+
+					tr {
+						margin-bottom: 15px;
+					}
+
+					tbody {
+						tr {
+							td {
+								text-align: right;
+								padding-left: 50%;
+								position: relative;
+								border: 1px solid #dee2e685;
+								word-wrap: break-word !important;
+								word-break: break-word !important;
+								background-color: #3c3f44;
+								color: #fff;
+
+								.tombol-hapus {
+									margin-top: 0;
+								}
+							}
+						}
+					}
+
+					td:before {
+						content: attr(data-label);
+						position: absolute;
+						left: 0;
+						width: 50%;
+						padding-left: 15px;
+						font-weight: 600;
+						font-size: 16px;
+						text-align: left;
+					}
+				}
+
+				.table-2,
+				.table-2 tbody,
+				.table-2 tr,
+				.table-2 td {
+					display: block;
+					width: 100%;
+				}
+
+				.table-3 {
+					thead {
+						display: none;
+					}
+
+					tr {
+						margin-bottom: 15px;
+					}
+
+					tbody {
+						tr {
+							td {
+								text-align: right;
+								padding-left: 50%;
+								position: relative;
+								border: 1px solid #dee2e685;
+								word-wrap: break-word !important;
+								word-break: break-word !important;
+								background-color: #3c3f44;
+								color: #fff;
+
+								.tombol-hapus {
+									margin-top: 0;
+								}
+							}
+						}
+					}
+
+					td:before {
+						content: attr(data-label);
+						position: absolute;
+						left: 0;
+						width: 50%;
+						padding-left: 15px;
+						font-weight: 600;
+						font-size: 16px;
+						text-align: left;
+					}
+				}
+
+				.table-3,
+				.table-3 tbody,
+				.table-3 tr,
+				.table-3 td {
+					display: block;
+					width: 100%;
+				}
+
+				.table-4 {
+					thead {
+						display: none;
+					}
+
+					tr {
+						margin-bottom: 15px;
+					}
+
+					tbody {
+						tr {
+							td {
+								text-align: right;
+								padding-left: 50%;
+								position: relative;
+								border: 1px solid #dee2e685;
+								word-wrap: break-word !important;
+								word-break: break-word !important;
+								background-color: #3c3f44;
+								color: #fff;
+
+								.tombol-hapus {
+									margin-top: 0;
+								}
+							}
+						}
+					}
+
+					td:before {
+						content: attr(data-label);
+						position: absolute;
+						left: 0;
+						width: 50%;
+						padding-left: 15px;
+						font-weight: 600;
+						font-size: 16px;
+						text-align: left;
+					}
+				}
+
+				.table-4,
+				.table-4 tbody,
+				.table-4 tr,
+				.table-4 td {
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+
+@import '../scss/modules/row-col';

@@ -1,0 +1,35 @@
+* {
+  font-family: 'Arial', Helvetica, sans-serif;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.font-size-14 {
+  font-size: 14px;
+}
+
+.font-size-12 {
+  font-size: 12px;
+}
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+h3 {
+  text-align: center;
+}
+
+.tanda-tangan {
+  float: right;
+}
+/*# sourceMappingURL=cetak.css.map */
